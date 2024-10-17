@@ -1,4 +1,3 @@
-pip install streamlit transformers
 import streamlit as st
 from transformers import pipeline
 
@@ -8,6 +7,7 @@ summarizer = pipeline("summarization")
 # Set the title of the app
 st.title("Text Summarizer App")
 st.title("Developed by HUma")
+
 # Create a text area for user input
 input_text = st.text_area("Enter text to summarize:", height=300)
 
@@ -20,4 +20,3 @@ if st.button("Summarize"):
         st.write(summary[0]['summary_text'])
     else:
         st.error("Please enter some text to summarize.")
-streamlit run summarizer_app.py
